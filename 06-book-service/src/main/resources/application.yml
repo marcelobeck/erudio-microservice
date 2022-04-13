@@ -1,0 +1,27 @@
+server:
+  port: 8100
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: book-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/book-service
+    username: postgres
+    password: bs#2020
+  jackson:
+    default-property-inclusion: NON_NULL
+    serialization:
+      fail-on-empty-beans: false
+    jpa:
+      hibernate:
+        ddl-auto: create
+        show-sql: true
+    flyway:
+      url: jdbc:postgresql://localhost:5433/
+      schemas: book-service
+      username: postgres
+      password: bs#2020
